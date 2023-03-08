@@ -1,10 +1,10 @@
 import pandas as pd
 import statsmodels.api as sm
 
-data = pd.read_csv("data/1_american_dataset.csv")
+data = pd.read_csv("data/Audit Analytics 01.2010.csv")
 
-grouped_data = data.groupby('company_name')
-print(grouped_data.columns)
+opinions = data.filter(regex='OPINION_TEXT')
+print(opinions)
 
 # Loop through each company and fit an autoregressive model
 # for company, data in grouped_data:
